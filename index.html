@@ -26,5 +26,19 @@
 		git commit -m "remove del.html"
 		另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：
 		git checkout -- del.html
+	9.git 和 github的远程操作
+	  	1) 在github上创建一个新的远程仓库
+	 	2）将本地仓库和远程仓库相关联  git remote add origin https://github.com/wuyanping/gitLx.git
+	 	3）git push -u origin master 将本地仓库push到远程仓库上
+
+	10.从远程上克隆
+		git clone https://github.com/wuyanping/gitskills2.git
+
+	11.分支
+	 	1)创建分支
+	 		git checkout -b dev //创建dev分支，然后切换到dev分支 -b参数表示创建并切换
+	 	或者 <===>
+	 		git branch dev 
+	 		git checkout dev 
 </body>
 </html>
