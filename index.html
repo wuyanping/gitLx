@@ -34,12 +34,27 @@
 	10.从远程上克隆
 		git clone https://github.com/wuyanping/gitskills2.git
 
-	11.分支
-	 	1)创建分支
-	 		git checkout -b dev //创建dev分支，然后切换到dev分支 -b参数表示创建并切换
-	 	或者 <===>
-	 		git branch dev 
-	 		git checkout dev 
-	 	Creating a new branch is quick AND simple.
+	11.分支管理
+	    1.创建和合并分支
+	    	1.1)创建分支
+	        git checkout -b dev //创建dev分支，然后切换到dev分支 -b参数表示创建并切换
+	        或者 <===>
+	        git branch dev 
+	        git checkout dev 
+	        1.2)查看当前分支
+	        git branch  //列出所有分支，当前分支前面会标一个*号
+	        1.3)切换分支
+	        git checkout master //切换回master分支
+	        1.4)合并分支
+	        git merge dev //在master分支上合并dev分支 
+	        Fast-forward “快进模式”
+	        1.5）删除分支
+	        git branch -d dev //删除dev分支
+	    2.解决冲突
+	    	2.1）当发生从冲突了
+	    	   2.1.1）修改冲突
+	    	   2.1.2）git add
+	    	   2.1.3）git commit
+
 </body>
 </html>
