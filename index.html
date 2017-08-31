@@ -16,7 +16,15 @@
 		git reset --hard "HEAD^" // 返回上一个版本
 		或者 git reset --hard commit_id(版本号)
 		git reflog // 查看命令历史
-上的gas的gas打官司的故事
-
+	7.丢弃工作区修改
+		git checkout -- <filename> 这是保存了还没有操作git add ....
+		git reset HEAD <fileName> 写了一些胡话，还git add到暂存区了：
+	8.删除文件 
+		eg：把没用的del.html文件删了
+		现在你有两个选择，一是确实要从本地存储中删除该文件，那就用命令git rm删掉，并且git commit：
+		git rm del.html
+		git commit -m "remove del.html"
+		另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：
+		git checkout -- del.html
 </body>
 </html>
