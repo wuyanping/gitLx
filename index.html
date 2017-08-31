@@ -8,5 +8,14 @@
 	1. git init // 初始化一个git仓库
 	2.git add <file>/.    // 添加到本地储存
 	3.git commit -m 'xxx' //把本地存储存储在仓库，-m后面输入的是本次提交到仓库的说明
+	4.git status //查看的状态
+	5.git diff // 查看更改了那些内容
+	6.版本回退 
+		git log  [--pretty=oneline]//显示从最近到最远的提交日志
+		HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^
+		git reset --hard "HEAD^" // 返回上一个版本
+		或者 git reset --hard commit_id(版本号)
+		git reflog // 查看命令历史
+		
 </body>
 </html>
