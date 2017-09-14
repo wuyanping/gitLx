@@ -56,6 +56,31 @@
 	    	   2.1.2）git add
 	    	   2.1.3）git commit
 		3.分支管理策略
-			
+			git merge --no-ff -m "merge with no-ff" dev 
+			// 准备合并dev分支，请注意--no-ff参数，表示禁用Fast forward：
+			git log --graph --pretty=oneline --abbrev-commit
+			// git log看看分支历史：
+		4.多人协作
+			git remote [-v] //查看远程库信息[-v显示更详细的信息]
+			给dev分支看的
+			4.1）推送分支
+			git push origin master 该分支推送到远程库对应的远程分支上
+			git push origin dev
+			4.2）tag标签
+			$ git log --pretty=oneline --abbrev-commit //找到历史提交的commit id
+			{
+				$ git tag v0.9 id ||
+			    $ git tag -a v0.1 -m "version 0.1 released" 3628164 //创建带有说明的标签，用-a指定标签名，-m指定说明文字：
+			    git tag -s v0.2 -m "signed version 0.2 released" fec145a //通过-s用私钥签名一个标签：
+		    }
+			git show <tagname> //查看标签信息：
+			$ git tag -d v0.1 //删除：
+			$ git push origin <tagname> //推送某个标签到远程
+			git push origin --tags //一次性推送全部尚未推送到远程的本地标签：
+			4.3)删除远程标签
+			git tag -d v0.9 //先从本地删除：
+			$ git push origin :refs/tags/v0.9   //然后，从远程删除。删除命令也是push，
+
+
 </body>
 </html>
