@@ -56,6 +56,13 @@
 	    	   2.1.2）git add
 	    	   2.1.3）git commit
 		3.分支管理策略
-			
+			git merge --no-ff -m "merge with no-ff" dev 
+			// 准备合并dev分支，请注意--no-ff参数，表示禁用Fast forward：
+			git log --graph --pretty=oneline --abbrev-commit
+			// git log看看分支历史：
+		4.多人协作
+			git remote [-v] //查看远程库信息[-v显示更详细的信息]
+			给dev分支看的
+
 </body>
 </html>
