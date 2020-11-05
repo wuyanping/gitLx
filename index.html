@@ -5,6 +5,7 @@
 	<title>Document</title>
 </head>
 <body>
+	<pre>
 	1. git init // 初始化一个git仓库
 
 	2.git add <file>/.    // 添加到本地储存
@@ -22,12 +23,22 @@
 	6.版本回退 
 		git log  [--pretty=oneline]//显示从最近到最远的提交日志
 		HEAD表示当前版本（也就是在当前分支你最近的一个提交），上一个版本就是HEAD^，上上一个版本就是HEAD^^
-		git reset --hard "HEAD^" // 返回上一个版本（--hard回退版本之后提交的版本都不要了）
-		或者 git reset --hard commit_id(版本号)
-		git reflog // 查看命令历史
+
+		6.1 reset 
+		[
+			--mixed: 默认，不带任何参数时；它回退到某个版本，只保留 源码，回退commit和index（缓存区）信息
+			--soft：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可
+			--hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容
+		]
+		git reset [--hard | --soft | --mixed] "HEAD^" // 返回上一个版本
+		或者 git reset [--hard | --soft | --mixed] commit_id(版本号)
+		git reflog // 查看命令历史 退出：q
 
 	7.丢弃工作区修改
 		git checkout -- <filename> 这是保存了还没有操作git add ....
+		工作修改还没放到stage区，撤销到工作区
+
+	8.暂存区的修改回退到工作区
 		git reset HEAD <fileName> 也可以把暂存区的修改回退到工作区
 
 	8.删除文件 
@@ -41,7 +52,14 @@
 	9.git 和 github的远程操作
 	  	1) 在github上创建一个新的远程仓库
 	 	2）将本地仓库和远程仓库相关联  git remote add origin https://github.com/wuyanping/gitLx.git
-	 	3）git push -u origin master 将本地仓库push到远程仓库上
+		 3）git push -u origin master 将本地仓库push到远程仓库上
+		 4）假如本地分支回退了几个版本，(本地库HEAD指向的版本比远程库的要旧)push不上去，强制推送
+		<img src="./img/微信图片_20201105102700.png">
+		<img src="./img/微信图片_20201105102621.png" width="800px">
+		git push 推送失败
+		<img src="./img/1.png">
+		使用命令（强制推送）：git push -f
+		 <img src="./img/push-f.png">
 
 	10.从远程上克隆
 		git clone https://github.com/wuyanping/gitskills2.git
@@ -65,7 +83,7 @@
 
 	    2.解决冲突
 	    	2.1）当发生从冲突了
-	    	   2.1.1）修改冲突
+	    	   2.1.1）修改冲突 
 	    	   2.1.2）git add
 	    	   2.1.3）git commit
 
@@ -99,6 +117,6 @@
 			git tag -d v0.9 //先从本地删除：
 			$ git push origin :refs/tags/v0.9   //然后，从远程删除。删除命令也是push，
 
-
+		</pre>
 </body>
 </html>
